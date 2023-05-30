@@ -4,10 +4,12 @@
     "dev": "next",
     "build": "next build",
     "start": "next start",
-    "type-check": "tsc"
+    "type-check": "tsc",
+    "prettify": "prettier -l --write \"**/*.tsx\""
   },
   "dependencies": {
     "next": "latest",
+    "prettier": "^2.8.8",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },

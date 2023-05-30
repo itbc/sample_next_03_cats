@@ -1,16 +1,18 @@
 import { NextPage } from "next";
 import { useEffect, useState } from "react";
 import styles from "./index.module.css";
- 
+
 const IndexPage: NextPage = () => {
   const [imageUrl, setImageUrl] = useState("");
   const [loading, setLoading] = useState(true);
   useEffect(() => {
     fetchImage().then((newImage) => {
       setImageUrl(newImage.url);
+
       setLoading(false);
     });
   }, []);
+
   // ボタンをクリックしたときに画像を読み込む処理
   const handleClick = async () => {
     setLoading(true); // 読込中フラグを立てる
@@ -20,7 +22,7 @@ const IndexPage: NextPage = () => {
   };
   return (
     // <div>
-      // <button onClick={handleClick}>他のにゃんこも見る</button>
+    // <button onClick={handleClick}>他のにゃんこも見る</button>
     <div className={styles.page}>
       <button onClick={handleClick} className={styles.button}>
         他のにゃんこも見る
@@ -32,7 +34,6 @@ const IndexPage: NextPage = () => {
   );
 };
 export default IndexPage;
- 
 type Image = {
   url: string;
 };
